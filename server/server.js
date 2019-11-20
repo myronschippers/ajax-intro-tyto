@@ -1,11 +1,10 @@
 let express = require('express');
+
+const PORT = 5000;
 let app = express();
 
-// Homepage Route
-app.get('/', (req, res) => {
-    res.send('Welcome to the homepage!!!');
-})
+app.use(express.static('client'))
 
-app.listen(5000, function(){
-    console.log('listening on port', 5000);
+app.listen(PORT, function(){
+    console.log('listening on port', PORT);
 });
