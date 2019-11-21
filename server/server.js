@@ -11,6 +11,6 @@ app.get('/quotes', (req, res) => {
     res.send(quotesObject.getNext());
 });
 
-app.listen(PORT, function(){
+app.listen(PORT, () => {
     console.log('listening on port', PORT);
 });
