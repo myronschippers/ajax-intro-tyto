@@ -15,10 +15,26 @@ function onClickAddQuote(event) {
     };
 
     console.log('Add Quote: ', quoteObject);
+    postQuote(quoteObject);
 }
 
 function onClickQuotes(event) {
     getQuotes();
+}
+
+function postQuote(awesomeQuote) {
+    console.log('POST: ', awesomeQuote);
+    $.ajax({
+        method: 'POST',
+        url: '/quotes',
+        data: awesomeQuote
+    })
+    .then(function(response) {
+        alert('We added your quote!!! WOOT!!!');
+    })
+    .catch(function(err) {
+        alert('Shit broke!!!');
+    });
 }
 
 function getQuotes() {
@@ -56,7 +72,7 @@ function render(showLoading) {
     $quoteList.empty();
     $quoteList.append(`
         <li>
-            <p>${QUOTES.text}</p>
+            <p>"${QUOTES.text}"</p>
             <em>${QUOTES.author}</em>
         </li>
     `);
