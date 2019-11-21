@@ -5,6 +5,16 @@ let QUOTES = null;
 function init() {
     console.log('Look at me!!!! I have INIT');
     $('.js-quotes-btn').on('click', onClickQuotes);
+    $('.js-btn-quote').on('click', onClickAddQuote);
+}
+
+function onClickAddQuote(event) {
+    const quoteObject = {
+        text: $('.js-field-text').val(),
+        author: $('.js-field-author').val()
+    };
+
+    console.log('Add Quote: ', quoteObject);
 }
 
 function onClickQuotes(event) {

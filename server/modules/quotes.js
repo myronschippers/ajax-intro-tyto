@@ -12,7 +12,12 @@ function getNextQuote() {
     return result;
 }
 
+function addQuote(newQuote) {
+    quotesData.push(newQuote)
+}
+
 module.exports = {
     list: quotesData,
-    getNext: getNextQuote
+    getNext: getNextQuote,
+    addQuote: addQuote
 };
