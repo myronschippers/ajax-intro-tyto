@@ -56,10 +56,6 @@ function getQuotes() {
     console.log('Getting Quote');
 }
 
-function getNextQuote() {
-    // AJAX for NEXT QUOTE
-}
-
 function render(showLoading) {
     console.log('render - showLoading: ', showLoading);
     const $quoteList = $('.js-quote-list');
